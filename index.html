@@ -3,90 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fun Games – Insta Reels & Posts</title>
-  <!-- Social preview for WhatsApp/others -->
-  <meta property="og:title" content="Fun Games – Insta Reels & Posts" />
-  <meta property="og:description" content="A quick list of Instagram game ideas. Tap to watch and share on WhatsApp." />
+  <title>Team VIBE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Team VIBE" />
+  <meta property="og:description" content="Valuing Ideas, Building engagement" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" />
+  <meta property="og:image" content="assets/Fun.jpg" />
   <meta name="theme-color" content="#111827" />
   <style>
-    :root {
-      --bg: #0b1220;
-      --card: #111827;
-      --muted: #94a3b8;
-      --text: #e5e7eb;
-      --accent: #22c55e; /* green for CTA */
-      --border: #1f2937;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: linear-gradient(180deg, #0b1220, #0b1220 40%, #0d1324 100%);
-      color: var(--text);
-    }
-    header {
-      padding: 20px 16px; position: sticky; top: 0; z-index: 5; background: rgba(11,18,32,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);
-    }
-    h1 { margin: 0; font-size: 20px; }
-    .sub { color: var(--muted); font-size: 14px; margin-top: 4px; }
-    main { max-width: 1000px; margin: 16px auto 80px; padding: 0 16px; }
+    :root { --bg:#0b1220; --card:#111827; --muted:#94a3b8; --text:#e5e7eb; --accent:#22c55e; --border:#1f2937; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;color:var(--text);background:linear-gradient(180deg,#0b1220,#0b1220 40%,#0d1324 100%)}
+    header{padding:0 0 8px 0;position:static;top:auto;z-index:auto;background:transparent;border-bottom:0}
 
-    .grid {
-      display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px;
-    }
-    .card {
-      grid-column: span 12;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-    }
-    @media (min-width: 640px) { .card { grid-column: span 6; } }
-    @media (min-width: 1024px) { .card { grid-column: span 4; } }
+    /* Hero */
+    .hero{max-width:1100px;margin:0 auto;padding:18px 16px 8px;display:flex;flex-direction:column;align-items:center;gap:12px}
+    .brand{width:100%;max-width:1100px;height:auto;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.45);border:1px solid var(--border);object-fit:cover}
+    .brand-title{margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto;font-weight:800;font-size:48px;line-height:1.1;text-align:center;background:linear-gradient(90deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    @media(min-width:768px){.brand-title{font-size:60px}}
+    .brand-quote{color:var(--muted);font-size:16px;text-align:center;font-style:italic}
 
-    .frame-wrap {
-      position: relative; width: 100%; aspect-ratio: 9 / 16; background: #0a0f1a;
-    }
-    .frame-wrap iframe {
-      position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-bottom: 1px solid var(--border);
-    }
+    main{max-width:1100px;margin:12px auto 100px;padding:0 16px}
 
-    .meta { padding: 12px 12px 8px; }
-    .title { font-weight: 600; font-size: 15px; line-height: 1.3; margin-bottom: 6px; }
-    .url { font-size: 12px; color: var(--muted); word-break: break-all; }
+    /* Stats bar */
+    .stats{display:flex;gap:14px;align-items:center;flex-wrap:nowrap;overflow:auto;margin:16px 0}
+    .pill{border:1px solid var(--border);border-radius:22px;padding:12px 18px;font-size:18px;font-weight:800;letter-spacing:.2px;background:#0d1728;box-shadow:0 6px 20px rgba(0,0,0,.25);white-space:nowrap}
+    .pill.total{background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#0b1220;border-color:transparent}
+    .pill.used{background:linear-gradient(135deg,#f87171,#fca5a5);color:#0b1220;border-color:transparent}
+    .pill.available{background:linear-gradient(135deg,#16a34a,#22c55e);color:#0b1220;border-color:transparent}
 
-    .actions { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border); flex-wrap: wrap; }
-    button, a.btn {
-      appearance: none; border: 1px solid var(--border); background: #0d1728; color: var(--text); padding: 8px 10px; border-radius: 999px; font-size: 13px; text-decoration: none; cursor: pointer;
-    }
-    .btn-primary { border-color: transparent; background: var(--accent); color: #0b1220; font-weight: 700; }
+    /* Cards */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    @media(min-width:640px){.card{grid-column:span 6}}
+    @media(min-width:1024px){.card{grid-column:span 4}}
+    .frame-wrap{position:relative;width:100%;aspect-ratio:16/9;max-height:220px;background:#0a0f1a}
+    .frame-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .meta{padding:12px 12px 8px}
+    .title{font-weight:600;font-size:15px;line-height:1.3;margin-bottom:6px}
+    .url{font-size:12px;color:var(--muted);word-break:break-all}
+    .actions{display:flex;gap:8px;padding:12px;border-top:1px solid var(--border);flex-wrap:wrap}
+    button,a.btn{appearance:none;border:1px solid var(--border);background:#0d1728;color:var(--text);padding:6px 8px;border-radius:999px;font-size:12px;text-decoration:none;cursor:pointer}
+    .btn-primary{border-color:transparent;background:var(--accent);color:#0b1220;font-weight:700}
+    .empty{text-align:center;color:var(--muted);padding:48px 12px;border:1px dashed var(--border);border-radius:16px}
+    .footer-share{position:fixed;right:16px;bottom:16px;display:flex;gap:8px;z-index:10}
+    .fab{border-radius:999px;padding:10px 14px;font-weight:700}
+    .note{color:var(--muted);font-size:12px;margin:8px 0 0}
+    .thumb{position:relative;width:100%;height:100%;background:#0a0f1a center/cover no-repeat}
+    .thumb .play{position:absolute;inset:0;display:block}
+    .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.0),rgba(0,0,0,.35))}
+    .thumb::before{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:rgba(0,0,0,.55);box-shadow:0 4px 12px rgba(0,0,0,.4)}
+    .play::after{content:"";position:absolute;left:50%;top:50%;margin:-9px 0 0 -6px;width:0;height:0;border-left:18px solid white;border-top:10px solid transparent;border-bottom:10px solid transparent}
+    .used-btn.used{background:#16a34a;color:#fff;font-weight:600}
 
-    .empty { text-align: center; color: var(--muted); padding: 48px 12px; border: 1px dashed var(--border); border-radius: 16px; }
-
-    .footer-share {
-      position: fixed; right: 16px; bottom: 16px; display: flex; gap: 8px; z-index: 10;
-    }
-    .fab { border-radius: 999px; padding: 10px 14px; font-weight: 700; }
-
-    .note { color: var(--muted); font-size: 12px; margin: 8px 0 0; }
+    /* Safety: hide any stray legacy stats blocks */
+    .stats:not(#statsbar){display:none}
   </style>
 </head>
 <body>
   <header>
-    <h1>Fun Games – Insta Reels & Posts</h1>
-    <div class="sub">Quick page to watch & share on WhatsApp. (Links must be <strong>public</strong> on Instagram.)</div>
+    <div class="hero">
+      <img id="brand-img" class="brand" src="assets/Fun.jpg" alt="Team VIBE" onerror="this.style.display='none'"/>
+      <h1 class="brand-title">Team VIBE</h1>
+      <div class="brand-quote">“Valuing Ideas ,Building engagement”</div>
+    </div>
   </header>
 
   <main>
-    <!-- 1) Add your Instagram links below in the items[] list.
-         2) Keep them public. Private or age-restricted links won't embed.
-         3) Reorder as you like. Titles are optional. -->
+    <div class="stats" id="statsbar">
+      <div class="pill total" id="count-total">Total: —</div>
+      <div class="pill used" id="count-used">Used: —</div>
+      <div class="pill available" id="count-available">Available: —</div>
+    </div>
 
     <div id="grid" class="grid"></div>
-
-    <div id="empty" class="empty" style="display:none;">No links yet. Edit this file and add your Instagram URLs in the <code>items</code> list.</div>
-
-    <p class="note">Problems loading? Tap <em>Open in Instagram</em> to view directly.</p>
+    <div id="empty" class="empty" style="display:none;">No links yet. Edit this file and add your URLs in the <code>items</code> list.</div>
+    <p class="note">Problems loading? For Instagram, tap <em>Open in Instagram</em>. YouTube Shorts play inline.</p>
   </main>
 
   <div class="footer-share">
@@ -94,51 +88,121 @@
   </div>
 
   <script>
-    // ======== EDIT BELOW: Your Instagram links =========
-    // Example entries provided. Replace with your own.
+    // ======== Your links =========
     const items = [
       { title: "Drop the Pen in bottle using Mobile camera", url: "https://www.instagram.com/reel/DNP0ZztvnvZ/?igsh=M3h2M3Z5eGE2amlw" },
       { title: "Fan the Cup", url: "https://www.instagram.com/reel/DMvARSAz6qY/?igsh=MTh2cXp2M2hndW1rbA%3D%3D" },
-      { title: "Strick standing Challenge", url: "https://www.instagram.com/reel/DNQEm21vdpB/?igsh=c2d2bTZyc255aTc=" }
+      { title: "Strick standing Challenge", url: "https://www.instagram.com/reel/DNQEm21vdpB/?igsh=c2d2bTZyc255aTc=" },
+      { title: "Hanger Transfer", url: "https://www.instagram.com/reel/DOBPgExCLgo/?igsh=MTJpazR0aHBjcjdibw==" },
+      { title: "Multiple games in this Reel", url: "https://www.instagram.com/reel/DOGK-8KEskO/?igsh=MWl6cTg5cXhldmRibA==" },
+      { title: "Do the Opposites", url: "https://www.instagram.com/reel/DOycseHE_NS/?igsh=eTI4ZTJ4YnRjYzM4" },
+      { title: "Mission Bottle escape", url: "https://www.instagram.com/reel/DMfKLvcvbwF/?igsh=MXI0bDRicTV1ZmdlcA==" },
+      { title: "Ball Gate", url: "https://www.instagram.com/reel/DLZLzUpy9JE/?igsh=MXg5dnYwaDk4ZDd0aQ==" },
+      { title: "Catch it if you can", url: "https://www.instagram.com/reel/DMaaKp2TY1I/?igsh=MTk3MDYzNzA2cDI0bQ==" },
+      { title: "Whats hiding in the cup?", url: "https://www.instagram.com/reel/DLZ39itSv5I/?igsh=MWkweXdpb2w2djFsNA==" },
+      { title: "Spin and Drop the ball with bottle", url: "https://www.instagram.com/reel/DNFGKpSSJX1/?igsh=MTh0OXQ5OTd3bHUxMQ==" },
+      { title: "Don't Clap At the Same Time", url: "https://www.instagram.com/reel/DK14cTbpnXc/?igsh=MWluNmtwYTU3ZHl0cA==" },
+      { title: "Don't follow the hand", url: "https://www.instagram.com/reel/DLm-ckQSnaZ/?igsh=aTQxbW80cXo5eHF6" },
+      { title: "Fill the cup with chocolate with papercup in both hand", url: "https://www.instagram.com/reel/DNlQfNvSZuO/?igsh=bHBxdzg3Nng1ZnNr" },
+      { title: "Collect the cup with straw", url: "https://www.instagram.com/reel/DNqUyH0o_On/?igsh=MXFhNnF5ZGozdmo1NA==" },
+      { title: "Flip the bottle", url: "https://youtube.com/shorts/JHU9ac717Tw?si=iho1cq6aS14VMxFz" },
+      { title: "Blow the Cup with balloon", url: "https://www.instagram.com/reel/DNQYH_YSrvx/?igsh=MXRjYWlybHc5ZmV5bA==" },
+      { title: "Tower Cup Challenge", url: "https://www.instagram.com/reel/DLZp5RYv7aY/?igsh=NTV6Z2hzcXBwNDF0" },
+      { title: "Communication challenge", url: "https://youtube.com/shorts/RO0uJrbk1kc?si=c24-sWUk3MrDTOl2" },
+      { title: "Don't Drop the Balloon", url: "https://youtube.com/shorts/N_xj-Zc762U?si=oJLotePSpF1qAzhC" },
+      { title: "Head, Shoulder,Knees and pick the  item", url: "https://youtube.com/shorts/m_QEcL7dK7I?si=_6uZ3ArVQhS7lCj3" },
+      { title: "Build the tower with Marshmallow", url: "https://youtu.be/7ZMuHZv47bQ?si=VMx2ypYdEXjBgfz9" },
+      { title: "Goal the Ball", url: "https://youtube.com/shorts/bQYxwodUM2c?si=WlULSCE0Sh4vSUE-" },
+      { title: "Hold the Paper with Straw", url: "https://youtube.com/shorts/mJgk6DLG7t0?si=fPG24w4lrdbg1nnG" },
+      { title: "Build the pyramid with cup in head", url: "https://youtu.be/e-qehXWt36Y?si=QNK8HizfkpOFXmCE" },
+      { title: "Cup and straw Balance", url: "https://youtube.com/shorts/PSDLwatlT2Q?si=jCuzv0y18d1uB3a6" },
+      { title: "Hold the ball with Pen", url: "https://www.instagram.com/reel/DIog4Lnh-JV/?igsh=MWRiMGZkd2V1NWU3OQ==" },
+      { title: "Spin and jump into your paper", url: "https://www.instagram.com/reel/DKPfi9ChQkg/?igsh=MTF2dWFwZ3NiMmMzMA==" },
+      { title: "Transfer the ball with A4 paper", url: "https://www.instagram.com/reel/DMhVD5wRqa7/?igsh=emxtN2MzdzJ4ZDk4" },
+      { title: "Catch the ball", url: "https://youtube.com/shorts/2cWj0XGiwGY?si=6J2kxLH1UWkUTM1y" }
     ];
-    // ================================================
 
-    function toEmbedURL(u) {
-      try {
-        const url = new URL(u);
-        if (!/instagram\.com$/i.test(url.hostname.replace(/^www\./, ''))) return u; // not Instagram
-        // Ensure it ends with /embed
-        return u.replace(/\/?$/, '') + '/embed';
-      } catch { return u; }
+    // Platform helpers
+    function detectPlatform(u){
+      try{const x=new URL(u);const h=x.hostname.replace(/^www\./,'');
+        if(h.endsWith('youtube.com')||h==='youtu.be') return 'youtube';
+        if(h.endsWith('instagram.com')) return 'instagram';
+      }catch{}
+      return 'other';
+    }
+    function youtubeId(u){
+      try{const x=new URL(u);if(x.hostname==='youtu.be'){return x.pathname.slice(1);} 
+        if(x.pathname.startsWith('/shorts/')) return x.pathname.split('/')[2];
+        if(x.searchParams.get('v')) return x.searchParams.get('v');
+      }catch{}
+      return null;
+    }
+    function youtubeEmbed(u){const id=youtubeId(u);return id?`https://www.youtube.com/embed/${id}`:null}
+
+    function getThumb(item){
+      if(item.thumb) return item.thumb;
+      return 'data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111827"/><stop offset="1" stop-color="#0b1220"/></linearGradient></defs><rect width="1200" height="675" fill="url(#g)"/><text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" fill="#94a3b8" font-family="system-ui,Segoe UI,Roboto" font-size="32">Tap to open</text></svg>`);
+    }
+
+    // Persist Used state
+    const USED_KEY='used-items-v1';
+    const usedStore=new Set(JSON.parse(localStorage.getItem(USED_KEY)||'[]'));
+    function saveUsed(){localStorage.setItem(USED_KEY,JSON.stringify([...usedStore]));}
+
+    function updateCounts(){
+      try{
+        const total = items.length;
+        const used = items.filter(i=>usedStore.has(i.url)).length;
+        const available = total - used;
+        const t=document.getElementById('count-total'); if(t) t.textContent=`Total: ${total}`;
+        const u=document.getElementById('count-used'); if(u) u.textContent=`Used: ${used}`;
+        const a=document.getElementById('count-available'); if(a) a.textContent=`Available: ${available}`;
+      }catch(e){ console.warn('counts update error', e); }
     }
 
     function makeCard(item) {
+      const platform = detectPlatform(item.url);
+      const openLabel = platform==='youtube' ? 'Open in YouTube' : platform==='instagram' ? 'Open in Instagram' : 'Open link';
       const shareText = encodeURIComponent(`${item.title ? item.title + ' – ' : ''}${item.url}`);
       const waLink = `https://wa.me/?text=${shareText}`;
-
       const card = document.createElement('div');
       card.className = 'card';
+
+      let mediaHTML='';
+      if(platform==='youtube' && youtubeEmbed(item.url)){
+        mediaHTML = `<iframe src="${youtubeEmbed(item.url)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+      } else {
+        mediaHTML = `<div class="thumb" style="background-image:url('${getThumb(item)}')"><a class="play" target="_blank" rel="noopener" href="${item.url}"></a></div>`;
+      }
+
+      const isUsed = usedStore.has(item.url);
+
       card.innerHTML = `
-        <div class="frame-wrap">
-          <iframe src="${toEmbedURL(item.url)}" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
+        <div class="frame-wrap">${mediaHTML}</div>
         <div class="meta">
-          <div class="title">${item.title ? item.title.replace(/</g,'&lt;') : 'Instagram Link'}</div>
+          <div class="title">${item.title ? item.title.replace(/</g,'&lt;') : 'Link'}</div>
           <div class="url">${item.url.replace(/</g,'&lt;')}</div>
         </div>
         <div class="actions">
-          <a class="btn" target="_blank" rel="noopener" href="${item.url}">Open in Instagram</a>
+          <a class="btn" target="_blank" rel="noopener" href="${item.url}">${openLabel}</a>
           <a class="btn" target="_blank" rel="noopener" href="${waLink}">Share on WhatsApp</a>
           <button class="btn" data-copy="${item.url}">Copy link</button>
-        </div>
-      `;
+          <button class="btn used-btn ${isUsed?'used':''}" data-url="${item.url}">${isUsed?'Used ✓':'Used'}</button>
+        </div>`;
+
       card.querySelector('button[data-copy]').addEventListener('click', async (e) => {
-        try {
-          await navigator.clipboard.writeText(item.url);
-          e.currentTarget.textContent = 'Copied!';
-          setTimeout(() => (e.currentTarget.textContent = 'Copy link'), 1200);
-        } catch { alert('Copy failed. Long-press and copy the link.'); }
+        try { await navigator.clipboard.writeText(item.url); e.currentTarget.textContent='Copied!'; setTimeout(()=>e.currentTarget.textContent='Copy link',1200); }
+        catch { alert('Copy failed. Long-press and copy the link.'); }
       });
+
+      card.querySelector('.used-btn').addEventListener('click',(e)=>{
+        const url=e.currentTarget.getAttribute('data-url');
+        if(usedStore.has(url)){ usedStore.delete(url); e.currentTarget.classList.remove('used'); e.currentTarget.textContent='Used'; }
+        else { usedStore.add(url); e.currentTarget.classList.add('used'); e.currentTarget.textContent='Used ✓'; }
+        saveUsed();
+        updateCounts();
+      });
+
       return card;
     }
 
@@ -149,21 +213,20 @@
       items.forEach(i => grid.appendChild(makeCard(i)));
     }
 
-    // Floating page share (shares this page URL)
-    const shareBtn = document.getElementById('sharePage');
-    const pageWa = `https://wa.me/?text=${encodeURIComponent('Fun Games – Insta Reels & Posts ' + window.location.href)}`;
-    shareBtn.href = pageWa;
+    // Update counts now and after load
+    updateCounts();
+    window.addEventListener('load', updateCounts);
 
-    // If user has native share
+    // Page share
+    const shareBtn = document.getElementById('sharePage');
+    const pageWa = `https://wa.me/?text=${encodeURIComponent('Team VIBE – Insta & YouTube ' + window.location.href)}`;
+    shareBtn.href = pageWa;
     if (navigator.share) {
       shareBtn.addEventListener('click', async (e) => {
         e.preventDefault();
-        try {
-          await navigator.share({ title: document.title, text: 'Fun Games – Insta Reels & Posts', url: window.location.href });
-        } catch {}
+        try { await navigator.share({ title: document.title, text: 'Team VIBE – Insta & YouTube', url: window.location.href }); } catch {}
       });
     }
   </script>
 </body>
 </html>
-
